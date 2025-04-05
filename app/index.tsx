@@ -1,15 +1,5 @@
-import { Text, View } from "react-native";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text> This is the Redirection Page</Text>
-    </View>
-  );
+  return <Redirect href="/(screens)/splash" />;
 }
