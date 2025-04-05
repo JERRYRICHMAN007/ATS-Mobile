@@ -3,14 +3,14 @@ import React from "react";
 
 import Styles from "../../styles/screens.styles";
 
-export default function Onboarding1() {
+export default function Onboarding2() {
   return (
     <View style={Styles.container}>
       {/* Image */}
       <Image
         style={Styles.image}
         resizeMode="contain"
-        source={require("../../assets/images/images/split.png")}
+        source={require("../../assets/images/images/split2.png")}
       />
 
       {/* Buttons */}
@@ -20,7 +20,7 @@ export default function Onboarding1() {
         </TouchableOpacity>
 
         <TouchableOpacity style={Styles.skipButton}>
-          <Text style={[Styles.buttonText, { color: "" }]}>Skip</Text>
+          <Text style={[Styles.buttonText, { color: "black" }]}>Skip</Text>
         </TouchableOpacity>
       </View>
 

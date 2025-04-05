@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: "60%",
+    height: "70%",
+    marginRight: 35,
   },
   buttonContainer: {
     alignItems: "center",
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 40,
     borderRadius: 8,
-    width: "80%",
+    width: "90%",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 8,
-    width: "80%",
+    width: "90%",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -40,9 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
-  skipButtonText: {
-    color: "black",
-  },
+
   signInContainer: {
     paddingTop: 10,
   },
