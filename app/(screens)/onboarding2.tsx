@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
 import Styles from "../../styles/screens.styles";
@@ -8,7 +8,7 @@ export default function Onboarding2() {
     <View style={Styles.container}>
       {/* Image */}
       <Image
-        style={Styles.image}
+        style={Styles.image2}
         resizeMode="contain"
         source={require("../../assets/images/images/split2.png")}
       />

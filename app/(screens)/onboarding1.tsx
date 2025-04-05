@@ -1,9 +1,11 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-
+import { useRouter } from "expo-router";
 import Styles from "../../styles/screens.styles";
 
 export default function Onboarding1() {
+  const router = useRouter();
+
   return (
     <View style={Styles.container}>
       {/* Image */}
@@ -15,12 +17,15 @@ export default function Onboarding1() {
 
       {/* Buttons */}
       <View style={Styles.buttonContainer}>
-        <TouchableOpacity style={Styles.nextButton}>
+        <TouchableOpacity
+          style={Styles.nextButton}
+          onPress={() => router.push("/(screens)/onboarding2")}
+        >
           <Text style={Styles.buttonText}>Next</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={Styles.skipButton}>
-          <Text style={[Styles.buttonText, { color: "" }]}>Skip</Text>
+          <Text style={[Styles.buttonText, { color: "#555" }]}>Skip</Text>
         </TouchableOpacity>
       </View>
 

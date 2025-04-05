@@ -11,7 +11,12 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "70%",
-    marginRight: 35,
+    marginLeft: 40,
+  },
+  image2: {
+    width: "100%",
+    height: "70%",
+    marginRight: 40,
   },
   buttonContainer: {
     alignItems: "center",
