@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
 
 export default function SplashScreen() {
@@ -11,7 +11,10 @@ export default function SplashScreen() {
         backgroundColor: "#fff",
       }}
     >
-      <Text>SplashScreen</Text>
+      <Image
+        source={require("../../assets/images/images/photo_2025-04-05_03-31-58.jpg")}
+        style={{ width: 300, height: 280 }}
+      />
     </View>
   );
 }
