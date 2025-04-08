@@ -24,7 +24,10 @@ export default function Onboarding1() {
           <Text style={Styles.buttonText}>Next</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={Styles.skipButton}>
+        <TouchableOpacity
+          style={Styles.skipButton}
+          onPress={() => router.push("/(auth)/login")}
+        >
           <Text style={[Styles.buttonText, { color: "#555" }]}>Skip</Text>
         </TouchableOpacity>
       </View>
