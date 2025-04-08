@@ -1,23 +1,64 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import React, { useState } from "react";
 import { router } from "expo-router";
+
 import Styles from "../../styles/auth.styles";
 
 export default function signup() {
+  const [fullName, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignup = async () => {
+    if (!fullName || !email || !password) {
+      Alert.alert("Error", "All fields are required!");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://applicant-tracking-system-backend-aqpr.onrender.com/api/v1/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fullName,
+            email,
+            password,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        Alert.alert("Success", "Your account has been created successfully!");
+        router.push("/(auth)/login"); // Navigate to the login page
+      } else {
+        Alert.alert("Error", data.message || "Something went wrong!");
+      }
+    } catch (error) {
+      Alert.alert("Error", "Failed to connect to the server!");
+    }
+  };
+
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text
         style={{
-          fontSize: 20,
+          fontSize: 30,
           fontWeight: "bold",
-          marginBottom: 20,
+          marginBottom: 50,
           margin: 10,
           textAlign: "center",
           color: "black",
         }}
       >
-        It’s our great pleasure to have you on board!
+        Sign Up
       </Text>
+
       <TextInput
         style={{
           width: "80%",
@@ -25,9 +66,11 @@ export default function signup() {
           borderWidth: 1,
           borderColor: "#ccc",
           borderRadius: 5,
-          marginBottom: 10,
+          marginBottom: 20,
         }}
         placeholder="Enter Your Name"
+        value={fullName}
+        onChangeText={setName}
       />
       <TextInput
         style={{
@@ -36,11 +79,13 @@ export default function signup() {
           borderWidth: 1,
           borderColor: "#ccc",
           borderRadius: 5,
-          marginBottom: 10,
+          marginBottom: 20,
         }}
         placeholder="Enter Email"
         keyboardType="email-address"
         autoCapitalize="none"
+        value={email}
+        onChangeText={setEmail}
       />
       <TextInput
         style={{
@@ -49,13 +94,16 @@ export default function signup() {
           borderWidth: 1,
           borderColor: "#ccc",
           borderRadius: 5,
-          marginBottom: 10,
+          marginBottom: 20,
         }}
         placeholder="Password"
         secureTextEntry
+        value={password}
+        onChangeText={setPassword}
       />
+
       <View style={Styles.loginButtonContainer}>
-        <TouchableOpacity style={Styles.loginNextButton}>
+        <TouchableOpacity style={Styles.loginNextButton} onPress={handleSignup}>
           <Text
             style={{
               color: "white",
@@ -73,7 +121,7 @@ export default function signup() {
           Already have an account?{" "}
           <Text
             style={Styles.linkText}
-            onPress={() => router.push("/(auth)/signup")}
+            onPress={() => router.push("/(auth)/login")}
           >
             Sign In
           </Text>

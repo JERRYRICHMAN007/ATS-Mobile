@@ -48,5 +48,11 @@ const Styles = StyleSheet.create({
     color: "#4CAF50",
     fontWeight: "bold",
   },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+    backgroundColor: "#fff",
+  },
 });
 export default Styles;
