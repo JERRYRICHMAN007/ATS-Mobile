@@ -1,4 +1,4 @@
-import { View, Text, Image, useWindowDimensions } from "react-native";
+import { View, Image, useWindowDimensions } from "react-native";
 import React, { useEffect } from "react";
 import { useRouter } from "expo-router";
 
