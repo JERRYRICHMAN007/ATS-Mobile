@@ -8,10 +8,16 @@ export default function signup() {
   const [fullName, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState(""); // Added confirm password state
 
   const handleSignup = async () => {
-    if (!fullName || !email || !password) {
+    if (!fullName || !email || !password || !confirmPassword) {
       Alert.alert("Error", "All fields are required!");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Alert.alert("Error", "Passwords do not match!");
       return;
     }
 
@@ -35,7 +41,7 @@ export default function signup() {
 
       if (response.ok) {
         Alert.alert("Success", "Your account has been created successfully!");
-        router.push("/(auth)/details"); // Navigate to the login page
+        router.push("/(auth)/details"); // Navigate to the details page
       } else {
         Alert.alert("Error", data.message || "Something went wrong!");
       }
@@ -50,8 +56,8 @@ export default function signup() {
         style={{
           fontSize: 30,
           fontWeight: "bold",
-          marginBottom: 50,
-          margin: 10,
+          marginBottom: 20,
+
           textAlign: "center",
           color: "black",
         }}
@@ -101,6 +107,20 @@ export default function signup() {
         value={password}
         onChangeText={setPassword}
       />
+      <TextInput
+        style={{
+          width: "80%",
+          padding: 10,
+          borderWidth: 1,
+          borderColor: "#ccc",
+          borderRadius: 5,
+          marginBottom: 20,
+        }}
+        placeholder="Confirm Password"
+        secureTextEntry
+        value={confirmPassword}
+        onChangeText={setConfirmPassword}
+      />
 
       <View style={Styles.loginButtonContainer}>
         <TouchableOpacity style={Styles.loginNextButton} onPress={handleSignup}>
@@ -119,7 +139,7 @@ export default function signup() {
 
       <View style={Styles.logInContainer}>
         <Text style={Styles.logInText}>
-          Already have an account?
+          Already have an account?{" "}
           <Text
             style={Styles.linkText}
             onPress={() => router.push("/(auth)/login")}
