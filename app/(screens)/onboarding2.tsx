@@ -35,7 +35,7 @@ export default function Onboarding2() {
       {/* Already have an account */}
       <View style={Styles.signInContainer}>
         <Text style={Styles.signInText}>
-          Already have an account?{" "}
+          Already have an account?
           <Text
             style={Styles.linkText}
             onPress={() => router.push("/(auth)/login")}

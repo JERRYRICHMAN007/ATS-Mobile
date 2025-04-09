@@ -12,7 +12,26 @@ const Styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 50,
   },
+  detailTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 50,
+    margin: 10,
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "black",
+  },
   input: {
+    width: "80%",
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+
+  detailInput: {
     width: "80%",
     padding: 10,
     borderWidth: 1,
@@ -37,6 +56,7 @@ const Styles = StyleSheet.create({
   },
   logInContainer: {
     paddingTop: 10,
+    marginTop: 20,
     width: "100%",
     alignItems: "center",
   },
@@ -47,6 +67,7 @@ const Styles = StyleSheet.create({
   linkText: {
     color: "#4CAF50",
     fontWeight: "bold",
+    marginLeft: 5,
   },
   container: {
     flex: 1,

@@ -35,7 +35,7 @@ export default function signup() {
 
       if (response.ok) {
         Alert.alert("Success", "Your account has been created successfully!");
-        router.push("/(auth)/login"); // Navigate to the login page
+        router.push("/(auth)/details"); // Navigate to the login page
       } else {
         Alert.alert("Error", data.message || "Something went wrong!");
       }
@@ -119,10 +119,13 @@ export default function signup() {
 
       <View style={Styles.logInContainer}>
         <Text style={Styles.logInText}>
-          Already have an account?{" "}
-          <TouchableOpacity onPress={() => router.push("/(auth)/login")}>
-            <Text style={Styles.linkText}>Sign In</Text>
-          </TouchableOpacity>
+          Already have an account?
+          <Text
+            style={Styles.linkText}
+            onPress={() => router.push("/(auth)/login")}
+          >
+            Sign In
+          </Text>
         </Text>
       </View>
     </View>
