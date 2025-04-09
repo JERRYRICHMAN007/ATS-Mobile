@@ -116,15 +116,13 @@ export default function signup() {
           </Text>
         </TouchableOpacity>
       </View>
+
       <View style={Styles.logInContainer}>
         <Text style={Styles.logInText}>
           Already have an account?{" "}
-          <Text
-            style={Styles.linkText}
-            onPress={() => router.push("/(auth)/login")}
-          >
-            Sign In
-          </Text>
+          <TouchableOpacity onPress={() => router.push("/(auth)/login")}>
+            <Text style={Styles.linkText}>Sign In</Text>
+          </TouchableOpacity>
         </Text>
       </View>
     </View>

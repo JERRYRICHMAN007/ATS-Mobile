@@ -1,10 +1,9 @@
-import { View, Image, useWindowDimensions } from "react-native";
+import { View, Image } from "react-native";
 import React, { useEffect } from "react";
 import { useRouter } from "expo-router";
 
 export default function SplashScreen() {
   const router = useRouter();
-  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     setTimeout(() => {
