@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, Alert } from "react-native";
 import React, { useState } from "react";
-import { Picker } from "@react-native-picker/picker"; // Import Picker
-import { router } from "expo-router"; // Import router for navigation
+import { Picker } from "@react-native-picker/picker";
+import { router } from "expo-router";
 import Styles from "@/styles/auth.styles";
 
 export default function details() {
-  const [selectedRole, setSelectedRole] = useState(""); // State for dropdown
+  const [selectedRole, setSelectedRole] = useState("");
 
   const handleSubmit = async () => {
     if (!selectedRole || selectedRole === "") {
